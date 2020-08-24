@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ImageBackground, Button } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Button, Modal } from 'react-native';
 import Main from './Main.js'
 
 export default function App() {
 
-  const [isHome, setIsHome] = useState(false)
+  const [isHome, setIsHome] = useState(true)
   const enterApp = () => {
     setIsHome(!isHome)
   }
@@ -18,7 +18,7 @@ export default function App() {
         >
         <Text style={styles.title}>Rona Rationalizer</Text>
         <Button title="Enter" onPress={() => setIsHome(!isHome)}/>
-        <Main visible={isHome}/>
+        <Main enter={isHome}/>
       </ImageBackground>
     </View>
   );
