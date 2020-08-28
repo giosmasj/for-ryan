@@ -11,6 +11,7 @@ export default function App() {
   }
 
   return (
+    <Modal visible={isHome}>
     <View style={styles.container}>
       <ImageBackground
         source={require('./assets/background.jpg')}
@@ -18,9 +19,10 @@ export default function App() {
         >
         <Text style={styles.title}>Rona Rationalizer</Text>
         <Button title="Enter" onPress={() => setIsHome(!isHome)}/>
-        <Main enter={isHome}/>
       </ImageBackground>
+        <Main />
     </View>
+    </Modal>
   );
 }
 
