@@ -10,14 +10,12 @@ export default function Main(props) {
 
   return (
     <Modal
-    visible={isHome}
+    visible={!isHome}
     >
     <View style={styles.alignment}>
       <Text style={styles.title}>So, you scared of the Rona?</Text>
-      <Button title="Yes, I'm freaking out!!" />
-      <View>
+      <Button title="Yes, I'm freaking out!!" onPress={() => console.log('yes')}/>
       <Button title="No, why would I be?!" onPress={() => console.log('no')}/>
-      </View>
     </View>
     </Modal>
   )

@@ -18,9 +18,13 @@ export default function App() {
         style={styles.image}
         >
         <Text style={styles.title}>Rona Rationalizer</Text>
-        <Button title="Enter" onPress={() => setIsHome(!isHome)}/>
+        <Text style={styles.question}>So, you scared of the Rona?</Text>
+        <View style={styles.yes}>
+      <Button title="Yes, I'm freaking out!!" onPress={() => setIsHome(!isHome)}/>
+      </View>
+      <Button style={styles.no} title="No, why would I be?!" onPress={() => setIsHome(!isHome)}/>
       </ImageBackground>
-        <Main />
+      {/* <Main /> */}
     </View>
     </Modal>
   );
@@ -36,11 +40,23 @@ const styles = StyleSheet.create({
   image: {
     justifyContent: "center",
     width: '100%',
-    height: '100%'
+    height: '100%',
   },
   title: {
     fontSize: 42,
     textAlign: "center",
-    marginBottom: 400
+    // marginTop: -300
+  },
+  question: {
+    fontSize: 22,
+    textAlign: "center",
+    marginTop: 7,
+    marginBottom: 330
+  },
+  yes: {
+    fontSize: 50
+  },
+  no: {
+
   }
 });
