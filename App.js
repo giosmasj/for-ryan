@@ -2,16 +2,21 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ImageBackground, Button, Modal } from 'react-native';
 import Main from './Main.js'
+import Yes from './Yes.js';
+import No from './No.js';
 
 export default function App() {
 
-  const [isHome, setIsHome] = useState(true)
-  const enterApp = () => {
-    setIsHome(!isHome)
+  const [isYes, setIsYes] = useState(false)
+  const enterAppYes = () => {
+    setIsYes(!isYes)
+  }
+  const [isNo, setIsNo] = useState(false)
+  const enterAppNo = () => {
+    setIsNo(!isNo)
   }
 
   return (
-    <Modal visible={isHome}>
     <View style={styles.container}>
       <ImageBackground
         source={require('./assets/background.jpg')}
@@ -19,14 +24,16 @@ export default function App() {
         >
         <Text style={styles.title}>Rona Rationalizer</Text>
         <Text style={styles.question}>So, you scared of the Rona?</Text>
-        <View style={styles.yes}>
-      <Button title="Yes, I'm freaking out!!" onPress={() => setIsHome(!isHome)}/>
-      </View>
-      <Button style={styles.no} title="No, why would I be?!" onPress={() => setIsHome(!isHome)}/>
+      <Button title="Yes, I'm freaking out!!" onPress={() => {setIsYes(true)}}/>
+      <Button style={styles.no} title="No, why would I be?!" onPress={() => enterAppNo()}/>
       </ImageBackground>
-      {/* <Main /> */}
-    </View>
+    <Modal visible={isYes}>
+      <Yes/>
     </Modal>
+    <Modal visible={isNo}>
+      <No/>
+    </Modal>
+    </View>
   );
 }
 
