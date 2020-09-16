@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { View, Text, Modal, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Button } from 'react-native'
 
 export default function Yes(props) {
 
   return (
     <View>
       <Text style={styles.main}>YES</Text>
+      <Button title="Back" onPress={() => props.isYes()}/>
     </View>
   )
 }

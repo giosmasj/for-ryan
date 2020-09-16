@@ -24,14 +24,14 @@ export default function App() {
         >
         <Text style={styles.title}>Rona Rationalizer</Text>
         <Text style={styles.question}>So, you scared of the Rona?</Text>
-      <Button title="Yes, I'm freaking out!!" onPress={() => {setIsYes(true)}}/>
+      <Button title="Yes, I'm freaking out!!" onPress={() => enterAppYes()}/>
       <Button style={styles.no} title="No, why would I be?!" onPress={() => enterAppNo()}/>
       </ImageBackground>
     <Modal visible={isYes}>
-      <Yes/>
+      <Yes isYes={enterAppYes}/>
     </Modal>
     <Modal visible={isNo}>
-      <No/>
+      <No isNo={enterAppNo}/>
     </Modal>
     </View>
   );
